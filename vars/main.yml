@@ -1,0 +1,5 @@
+---
+# vars file for ansible-history
+histsize: 10000
+histfilesize: 20000
+histtimeformat: "%F %T "

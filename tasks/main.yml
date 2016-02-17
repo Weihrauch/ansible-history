@@ -1,0 +1,10 @@
+---
+# tasks file for ansible-history
+- name: Set time history env vars
+  template: src=templates/history_config.sh.j2 dest=/etc/profile.d/history_timestamp.sh owner=root group=root mode=0644
+
+- name: Apply changes immediately
+  shell: source /etc/profile.d/history_timestamp.sh
+
+- name: Change bash history options (merge history of multi bash session)
+  shell: shopt -s histappend
